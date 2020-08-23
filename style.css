@@ -1,0 +1,45 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.grid {
+	width: 700px;
+	height: 700px;
+	max-width: 90vw;
+	max-height: 90vw;
+	border: 1px solid black;
+	margin: 50px auto;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.square {
+	width: 5%;
+	height: 5%;
+	border: 1px solid black;
+}
+
+.snake {
+	background-color: steelblue;
+}
+
+.head {
+	background-color: cornflowerblue;
+}
+
+.dead {
+	background-color: red;
+}
+
+.boost {
+	background-image: url("../assets/boost.png");
+	background-size: 70%;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.score {
+	text-align: center;
+}
