@@ -4,13 +4,29 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
-
+		<script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-firestore.js"></script>
 		<link rel="stylesheet" href="./css/style.css" />
 	</head>
 
 	<body>
 		<div class="grid"></div>
 		<h1 class="score">Score: <span>0</span></h1>
+		<h3 class="hi-score">Hi Score: <span></span></h3>
+		<script>
+			var firebaseConfig = {
+				apiKey: "AIzaSyA6uJ4i2ilx-2et79u5qyO0uIab7co5Nm8",
+				authDomain: "snake-2e59e.firebaseapp.com",
+				databaseURL: "https://snake-2e59e.firebaseio.com",
+				projectId: "snake-2e59e",
+				storageBucket: "snake-2e59e.appspot.com",
+				messagingSenderId: "313898647019",
+				appId: "1:313898647019:web:775e2a1a215b70e90d2dae",
+			};
+
+			firebase.initializeApp(firebaseConfig);
+			const firestore = firebase.firestore();
+		</script>
 		<script src="./js/script.js"></script>
 	</body>
 </html>

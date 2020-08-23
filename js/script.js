@@ -56,6 +56,30 @@ const snakesDeath = () => {
 			squares[index].classList.add("dead");
 		});
 		gameOn = false;
+
+		firestore
+			.collection("data")
+			.doc("s9HftP8bOpNfcUmVavIP")
+			.get()
+			.then((doc) => {
+				if (score > doc.data().HiScore) {
+					firestore
+						.collection("data")
+						.doc("s9HftP8bOpNfcUmVavIP")
+						.update({ HiScore: score })
+						.then(
+							firestore
+								.collection("data")
+								.doc("s9HftP8bOpNfcUmVavIP")
+								.get()
+								.then((doc) => {
+									document.querySelector(
+										".hi-score span"
+									).textContent = doc.data().HiScore;
+								})
+						);
+				}
+			});
 	}
 };
 
@@ -175,3 +199,12 @@ const playGame = () => {
 createSnake();
 
 document.addEventListener("click", playGame);
+
+const readHiScore = firestore
+	.collection("data")
+	.get()
+	.then((snapshot) => {
+		snapshot.docs.forEach((doc) => {
+			document.querySelector(".hi-score span").textContent = doc.data().HiScore;
+		});
+	});
