@@ -4,6 +4,22 @@
 	box-sizing: border-box;
 }
 
+body::after {
+	content: "";
+	background: url(image.jpg);
+	opacity: 0.5;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	position: absolute;
+	z-index: -1;
+	background-image: url("../assets/solid_snake.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
 .grid {
 	width: 700px;
 	height: 700px;
